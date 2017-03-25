@@ -4,11 +4,21 @@
 	Variables init
 **************************************/
 
-var list = new Array(),
+var data = new Object(),
+	list = new Array(),
 	item = {
 		text: '',
 		status: 'default'
-	};
+	}
+
+
+var d = new Date();
+var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+data.dayNumber = d.getDay();
+data.month = '';
+data.year = d.getFullYear();
+data.dayName = days[d.getDay()];
 
 /* default data */
 var list = [
@@ -78,6 +88,16 @@ function loadList(list){
 
 }
 
+function loadData(data){
+
+	document.querySelector('.center-wrapper #day').innerHTML = data.dayNumber;
+	document.querySelector('.center-wrapper #month').innerHTML = data.month;
+	document.querySelector('.center-wrapper #dayName').innerHTML = data.dayName;
+	document.querySelector('.center-wrapper #year').innerHTML = data.year;
+
+
+}
+
 function onKeyUp(event){
 	switch(event.keyCode){
 		case 13:
@@ -99,6 +119,7 @@ document.addEventListener('DOMContentLoaded', function(){
 	document.addEventListener('keyup',onKeyUp);
 
 	loadList(list);
+	loadData(data);
 
 
 	/* add click events to all of the loaded elements */
