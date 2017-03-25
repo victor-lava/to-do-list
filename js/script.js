@@ -34,6 +34,7 @@ function createNewItem(){
 
 
 		itemToAdd.innerHTML = "<input type='text' class='text' autocomplete='off'> <span class='selector'></span>";
+		itemToAdd.classList.add('slide-in');
 		itemToAdd.querySelector('.selector').addEventListener('click', markAsCompleted);
 
 		list.push(item);
@@ -77,6 +78,15 @@ function loadList(list){
 
 }
 
+function onKeyUp(event){
+	switch(event.keyCode){
+		case 13:
+		createNewItem();
+		break;
+	}
+	//alert(event.keyCode);
+}
+
 /*************************************
 			Boot
 **************************************/
@@ -86,6 +96,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 	document.querySelector('#add').addEventListener('click', createNewItem);
+	document.addEventListener('keyup',onKeyUp);
 
 	loadList(list);
 
