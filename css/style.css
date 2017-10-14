@@ -1,17 +1,22 @@
+* {
+    box-sizing: border-box;
+}
+
 body{
 	background: #f0efe9;
 	font-family: 'Varela Round', sans-serif;
+    overflow: hidden;
 }
 
 
 .center-wrapper{
 	background: #FFF;
-	max-width: 320px;
-	height: auto;
+	max-width: 80vh;
+	height: 100vh;
 	left:0;
 	right: 0;
 	margin: auto;
-	padding:30px;
+	padding: 30px;
 	font-size: 18px;
 	padding: 2.75em 3.45em;
 	box-shadow: 0 2px 10px 4px rgba(0,0,0,0.05);
@@ -58,7 +63,7 @@ body{
 }
 
 .center-wrapper .main{
-	height: 432px;
+	height: 75vh;
     overflow: hidden;
     position: relative;
 }
@@ -123,15 +128,15 @@ input{
     font-size: 18px;
     outline: none;
    	font-family: 'Varela Round', sans-serif;
-   	min-width: 277px;
+   	width: 82%;
 }
 .center-wrapper .main ul li::after{
     content: " ";
     /* background: #000; */
-    right: 40px;
+    right: 31px;
     top: 0;
     height: 30px;
-    width: 40px;
+    width: 40%;
     display: block;
     background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
     background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
@@ -150,14 +155,16 @@ ul li span.selector{
 	float: right;
 	border-radius:10em;
 	position: relative;
+    box-sizing: content-box;
+    vertical-align: bottom;
 }
 
 .center-wrapper .button{
     background: #50e3a4;
     width: 87px;
     height: 87px;
-    position: absolute;
- 	bottom: -20px;
+    position: fixed;
+ 	bottom: -25px;
     left: 0;
     right: 0;
     margin: auto;

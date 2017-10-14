@@ -12,11 +12,12 @@ var data = new Object(),
 	}
 
 
-var d = new Date();
-var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+var d = new Date(), 
+	days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+	months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul","Aug", "Sep", "Oct", "Nov", "Dec"];
 
-data.dayNumber = d.getDay();
-data.month = '';
+data.dayNumber = d.getDate();
+data.month = months[d.getMonth()];
 data.year = d.getFullYear();
 data.dayName = days[d.getDay()];
 
@@ -31,6 +32,8 @@ var list = [
 	{ text: 'Go for a walk', status: 'default'}
 ]
 /* end of default data */
+
+
 
 
 /*************************************
