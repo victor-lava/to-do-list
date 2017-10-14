@@ -1,0 +1,49 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-battery-status": {
+            "PACKAGE_NAME": "com.todovictor.app"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.todovictor.app"
+        },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "com.todovictor.app"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.todovictor.app"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.todovictor.app"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.todovictor.app"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "com.todovictor.app"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.todovictor.app"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.todovictor.app"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "com.todovictor.app"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.todovictor.app"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.todovictor.app"
+        }
+    }
+}
