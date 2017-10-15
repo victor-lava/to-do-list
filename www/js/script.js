@@ -75,6 +75,7 @@ function createNewItem(){
 		if(lastItem) { /* need to check if lastItem even exists */
 			if(lastItem.value == '') { /* if exists and has and empty value*/
 				pass = false; /* no passing for ya! */
+				lastItem.parentElement.classList.toggle('shake-it');
 			}
 		} 
 	
