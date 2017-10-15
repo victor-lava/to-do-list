@@ -68,25 +68,38 @@ function getListCount() {
 function createNewItem(){
 
 	var listToAdd = document.querySelector('#list-to-add'),
-		itemToAdd = document.createElement('li');
-
-
-		itemToAdd.dataset.index = getListCount() + 1;
-		itemToAdd.innerHTML = "<input type='text' class='text' autocomplete='off'> <span class='selector'></span>";
-		itemToAdd.classList.add('slide-in');
-
-		itemToAdd.querySelector('input').addEventListener('focus', trackChanges);
-		itemToAdd.querySelector('.selector').addEventListener('click', markAsCompleted);
-
-		list.push(item); /* empty yet */
-		saveData(JSON.stringify(list));
-
-		listToAdd.prepend(itemToAdd);
-
-		//document.querySelector('#list-to-add li:first-child .selector').addEventListener('click', markAsCompleted);
-
-		document.querySelector('#list-to-add li:first-child input').focus();
+		lastIndex = getListCount(),
+		lastItem = listToAdd.querySelector('li[data-index="' + lastIndex + '"] input'),
+		pass = true;
+		
+		if(lastItem) { /* need to check if lastItem even exists */
+			if(lastItem.value == '') { /* if exists and has and empty value*/
+				pass = false; /* no passing for ya! */
+			}
+		} 
 	
+
+	if(pass) {
+
+		var itemToAdd = document.createElement('li');
+
+	
+			itemToAdd.dataset.index = getListCount() + 1;
+			itemToAdd.innerHTML = "<input type='text' class='text' autocomplete='off'> <span class='selector'></span>";
+			itemToAdd.classList.add('slide-in');
+
+			itemToAdd.querySelector('input').addEventListener('focus', trackChanges);
+			itemToAdd.querySelector('.selector').addEventListener('click', markAsCompleted);
+
+			list.push(item); /* empty yet */
+			saveData(JSON.stringify(list));
+
+			listToAdd.prepend(itemToAdd);
+
+			//document.querySelector('#list-to-add li:first-child .selector').addEventListener('click', markAsCompleted);
+
+			document.querySelector('#list-to-add li:first-child input').focus();
+	}
 }
 
 function trackChanges() {
