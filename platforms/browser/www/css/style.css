@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'Varela Round';
+    src: url('../fonts/VarelaRound-Regular.ttf');
+    font-weight: normal;
+}
+
 * {
     box-sizing: border-box;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -105,8 +111,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 	pointer-events:none;
 }
 
-.center-wrapper .main ul li.done span.selector,
-.center-wrapper .main ul li:hover .selector{
+.center-wrapper .main ul li.done span.selector{
 	border-color:#50e3a4;
 }
 
@@ -132,6 +137,7 @@ input{
     outline: none;
    	font-family: 'Varela Round', sans-serif;
    	width: 82%;
+    transition: all 0.3s ease;
 }
 .center-wrapper .main ul li::after{
     content: " ";
@@ -160,6 +166,11 @@ ul li span.selector{
 	position: relative;
     box-sizing: content-box;
     vertical-align: bottom;
+    transition: all 0.3s ease;
+}
+
+ul li {
+    box-sizing: content-box;
 }
 
 .center-wrapper .button{
