@@ -111,8 +111,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 	pointer-events:none;
 }
 
-.center-wrapper .main ul li.done span.selector,
-.center-wrapper .main ul li:hover .selector{
+.center-wrapper .main ul li.done span.selector{
 	border-color:#50e3a4;
 }
 
