@@ -23,7 +23,8 @@ data.year = d.getFullYear();
 data.dayName = days[d.getDay()];
 
 /* default data */
-var list = readData();
+var list = readData(),
+	triedEmpty = 0;
 
 /*[
 	// { text: 'Buy new sweatshirt', status: 'completed'},
@@ -75,7 +76,16 @@ function createNewItem(){
 		if(lastItem) { /* need to check if lastItem even exists */
 			if(lastItem.value == '') { /* if exists and has and empty value*/
 				pass = false; /* no passing for ya! */
+				triedEmpty++; /* if tried to add empty task add + 1 */
+
+				lastItem.parentElement.classList.remove('slide-in');
 				lastItem.parentElement.classList.toggle('shake-it');
+				lastItem.focus();
+
+				if(triedEmpty > 4) {
+					lastItem.setAttribute('placeholder', 'Why your task is empty?');
+				}
+
 			}
 		} 
 	
