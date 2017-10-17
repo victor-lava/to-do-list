@@ -19,6 +19,21 @@ body{
     display: none;
 }
 
+h1 {
+    color: #50e3a4;
+}
+
+.blinker {
+    animation: MoveUpDown 1.3s ease infinite;
+    text-transform: uppercase;
+    font-weight: bold;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 70px;
+    z-index: 55;
+}
+
 
 .center-wrapper{
 	background: #FFF;
@@ -38,6 +53,11 @@ body{
 .main {
     padding-left: 2em;
     padding-right: 2em;
+}
+
+.main {
+    text-align: center;
+    line-height: 1.46em;
 }
 
 .center-wrapper .top{
@@ -259,4 +279,16 @@ ul li {
     .center-wrapper .button {
         display: none;
     }
+}
+
+@keyframes MoveUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-40px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
