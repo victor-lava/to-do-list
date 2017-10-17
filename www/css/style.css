@@ -15,6 +15,10 @@ body{
     margin: 0;
 }
 
+.hidden {
+    display: none;
+}
+
 
 .center-wrapper{
 	background: #FFF;

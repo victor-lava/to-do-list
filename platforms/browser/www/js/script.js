@@ -197,9 +197,14 @@ document.addEventListener('DOMContentLoaded', function(){
 	document.querySelector('#add').addEventListener('click', createNewItem);
 	document.addEventListener('keyup',onKeyUp);
 
-	loadList(list.reverse());
-	loadData(data);
-
+	if(list.length != 0) { // No data in the list
+		loadList(list.reverse());
+		loadData(data);
+	}
+	else {
+		document.querySelector('#content').classList.remove('hidden');
+		// show the message
+	}
 
 	/* add click events to all of the loaded elements */
 	var items = document.querySelectorAll('#list-to-add li'),
