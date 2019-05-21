@@ -87,10 +87,11 @@ function createNewItem(){
 				}
 
 			}
-		} 
-	
+		}
 
 	if(pass) {
+		
+		document.querySelector('#content').classList.add('hidden');
 
 		var itemToAdd = document.createElement('li');
 
