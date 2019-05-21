@@ -44,7 +44,11 @@ var list = readData(),
 /* end of default data */
 
 
-
+// document.addEventListener('deviceready', function(){
+//
+// 	// alert(JSON.stringify(device));
+//
+// }, false);
 
 /*************************************
 		Main method
@@ -113,6 +117,7 @@ function createNewItem(){
 
 			itemToAdd.querySelector('input').addEventListener('focus', trackChanges);
 			itemToAdd.querySelector('.selector').addEventListener('click', markAsCompleted);
+			itemToAdd.addEventListener('focusout', isItemEmpty);
 			listToAdd.prepend(itemToAdd);
 
 			item.timestamp = timestamp;
@@ -123,6 +128,15 @@ function createNewItem(){
 
 			document.querySelector('#list-to-add li:first-child input').focus();
 	}
+}
+
+function isItemEmpty() {
+	// strange loop
+	// if(this.value == '') {
+	// 	removeItem(this);
+	// 	return;
+	// 	alert('empty');
+	// }
 }
 
 function trackChanges() {
