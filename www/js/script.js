@@ -82,6 +82,8 @@ function showRemoveButton() {
 
 function createNewItem(){
 
+		addRemoveFunctionToItems(false);
+
 	var listToAdd = document.querySelector('#list-to-add'),
 		lastIndex = getListCount(),
 		lastItem = listToAdd.querySelector('li[data-index="' + lastIndex + '"] input'),
@@ -117,7 +119,7 @@ function createNewItem(){
 
 			itemToAdd.querySelector('input').addEventListener('focus', trackChanges);
 			itemToAdd.querySelector('.selector').addEventListener('click', markAsCompleted);
-			itemToAdd.addEventListener('focusout', isItemEmpty);
+			itemToAdd.querySelector('input').addEventListener('focusout', removeIfEmpty);
 			listToAdd.prepend(itemToAdd);
 
 			item.timestamp = timestamp;
@@ -130,13 +132,24 @@ function createNewItem(){
 	}
 }
 
-function isItemEmpty() {
-	// strange loop
-	// if(this.value == '') {
-	// 	removeItem(this);
-	// 	return;
-	// 	alert('empty');
-	// }
+function removeIfEmpty() {
+	if(isItemEmpty(this)) {
+		removeItem(this.parentElement);
+	}
+
+}
+
+function isItemEmpty(input) {
+	console.log(input);
+	let isEmpty = false,
+			value = input.value;
+
+			// console.log(input);
+
+	if(value == '') {
+		isEmpty = true;
+	}
+	return isEmpty;
 }
 
 function trackChanges() {
@@ -280,6 +293,8 @@ function onKeyUp(event){
 
 document.addEventListener('DOMContentLoaded', function(){
 
+	// removeData();
+
 	document.querySelector('#remove').addEventListener('click', toggleDeleteMode);
 	document.querySelector('#add').addEventListener('click', createNewItem);
 	document.addEventListener('keyup',onKeyUp);
@@ -300,6 +315,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 	for(index = 0; index < items.length; index++){
 		items[index].querySelector('input').addEventListener('focus', trackChanges);
+		items[index].querySelector('input').addEventListener('focusout', removeIfEmpty);
 		items[index].querySelector('.selector').addEventListener('click', markAsCompleted);
 
 	}

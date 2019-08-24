@@ -52,8 +52,8 @@ h1 {
 .top,
 .main,
 .footer {
-    padding-left: 2em;
-    padding-right: 2em;
+    padding-left: 1.47em;
+    padding-right: 1.47em;
 }
 
 .main {
@@ -133,6 +133,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 	padding-bottom: 2em;
 	line-height: 30px;
 	position: relative;
+  display: flex;
+  justify-content: space-between;
 }
 
 
@@ -166,17 +168,17 @@ ul li.done span.selector::after {
 
 input{
 	background: none;
-    border: none;
-    font-size: 18px;
-    outline: none;
-   	font-family: 'Varela Round', sans-serif;
-   	width: 82%;
-    transition: all 0.3s ease;
+  border: none;
+  font-size: 18px;
+  outline: none;
+ 	font-family: 'Varela Round', sans-serif;
+ 	width: 90%;
+  transition: all 0.3s ease;
 }
 .center-wrapper .main ul li::after{
     content: " ";
     /* background: #000; */
-    right: 33px;
+    right: 35px;
     top: 0;
     height: 30px;
     width: 40%;
@@ -194,13 +196,12 @@ span.selector{
 	height: 24px;
 	border: 4px solid #eee;
 	content:" ";
-	display: inline-block;
-	float: right;
 	border-radius:10em;
 	position: relative;
-    box-sizing: content-box;
-    vertical-align: bottom;
-    transition: all 0.3s ease;
+  box-sizing: content-box;
+  vertical-align: bottom;
+  transition: all 0.3s ease;
+  flex: 0 0 24px;
 }
 
 ul li {
@@ -234,6 +235,13 @@ ul li {
 
 .footer {
   padding-top: 7px;
+}
+
+#remove {
+  width: 32px;
+  position: absolute;
+  bottom: 16px;
+  display: flex;
 }
 
 #remove:not(.slide-in-footer) {
